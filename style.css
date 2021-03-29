@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#menu {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+
+#logo img {
+    width: 60px;
+    height: 60px;
+}
+
+#logo {
+    padding: 10px;
+}
+
+#searchbar {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 30%;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    border-width: 1px;
+    border-color: #ced4da;
+    border-style: solid;
+}
+
+#userTools {
+    margin-left: 50%;
+    display: flex;
+}
+
+#searchIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    float: left;
+    background: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#searchbar input {
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding-left: 8px;
+}
+
+#serchText {
+    font-size: 16px;
+    line-height: 40px;
+}
+
+#background {
+    margin: auto;
+    width: 80%;
+    height: 440px;
+    display: flex;
+    background-color: #f7ab31;
+}
+
+#textPanel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#textBox {
+    padding: 25px;
+    background-color: white;
+    text-align: left;
+    max-width: 400px;
+    text-justify: newspaper;
+}
+
+#textBox h1 {
+    font-size: 40px;
+}
+
+#textBox p {
+    font-size: 22px;
+    line-height: 130%
+}
+
+#imagePanel {
+    flex: 1;
+}
+
+#imagePanel img {
+    max-width: auto;
+    max-height: 100%;
+}
+
+#categories {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    height: 240px;
+    display: flex;
+}
+
+#footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: black;
+}
