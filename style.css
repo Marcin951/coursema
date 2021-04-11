@@ -88,6 +88,7 @@
 }
 
 #textBox h1 {
+    line-height: 110%;
     font-size: 38px;
 }
 
@@ -106,7 +107,7 @@
     max-height: 100%;
 }
 
-#categories {
+#coursesSlider {
     width: 80%;
     margin: auto;
     margin-top: 40px;
@@ -147,9 +148,18 @@
     margin-top: 20px;
 }
 
+#categories {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
 #footer {
     width: 100%;
     height: 100px;
     display: flex;
-    background-color: black;
+    background-color: #f8f8f8;
 }

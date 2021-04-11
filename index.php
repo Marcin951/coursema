@@ -48,7 +48,7 @@
         </div>
     </section>
 
-    <section id="categories">
+    <section id="coursesSlider">
         <h1>Najpopularniejsze kursy w ostatnim czasie</h1>
         <div id="slider">
             <div class="glide">
@@ -88,7 +88,8 @@
                             </span>
                             <?= $avgRate; ?>
                             /5 (
-                             
+                                <?= $result->rowCount(); ?>
+                           
                             )
                             </div>
                             <div class = "price">
@@ -109,8 +110,37 @@
         </div>
     </section>
 
-    <section id="footer">
+    <section id="categories">
+       <h1>Tematy polecane dla Ciebie</h1>
+       <div class="glideCategory">
+       <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                
+                    <ul class="glide__slides">
+                    
+                        
+                   
+                    <?
+                    $categoryR = $conn->query("SELECT * FROM recomendedCategories");
+                    $categories = array();
+                    while ($row = $categoryR->fetch()) {
+                        array_push($categories,$row['categoryName']);
+                    }
+                    for ($i = 0; $i++; $i<$categories.count){
+                        echo $categories[i];
+                    }
+                    ?>
+                    
+                        
+                    </ul>
+                  
+                </div>
+            </div>
+       </div>
+    </section>
 
+    <section id="footer">
+        © 2021 Coursema Inc. All rights reserved.
     </section>
     
     <script src="glide-3.4.1/dist/glide.min.js"></script>
