@@ -16,23 +16,10 @@
 </head>
 
 <body>
-    <section id="menu">
-        <div id="logo">
-            <img src="logo.png">
-        </div>
-        <div id="searchbar">
-            <div id="searchIcon">
-                <a href=""><span style="font-size: 16px; color: #27325f;"><i class="fas fa-search"></i></span></a>
-            </div>
-            <input id="serchText" type="text" placeholder="Czego chcesz się nauczyć?">
-        </div>
-        <div id="userTools">
-            <a href=""><span style="font-size: 24px; color: #27325f;"><i class="far fa-heart"></i></span></a>
-            <a href=""><span style="font-size: 24px; color: #27325f;"><i class="far fa-shopping-cart"></i></span></a>
-            <a href=""><span style="font-size: 24px; color: #27325f;"><i class="far fa-bell"></i></span></a>
-            <a href=""><span style="font-size: 50px; color: gray;"><i class="fas fa-user"></i></span></a>
-        </div>
-    </section>
+   
+    <?php
+        include 'menu.php';
+    ?>
 
     <section id="background">
         <div id="textPanel">
@@ -58,7 +45,7 @@
                     
                         
                    
-                    <?
+                    <?php
                     $connection_service = ConnectionWithDatabase::getInstance();
                     $conn = $connection_service->getConnection();
                     $stmt = $conn->query("SELECT * FROM courses");
@@ -72,10 +59,13 @@
                         }
                         if ($result->rowCount()>0){
                             $avgRate = $avgRate / $result->rowCount();
+                            $avgRate = number_format((float)$avgRate, 1, '.', '');
                         }
                      
                         ?>
+                       
                         <div class = "coursePreview">
+                        <a href = "coursePreview.php">
                            <li class="glide__slide">
                             <img src=<?=$row['thumbnailURL'];?>>
                             <h4><?= $row['title']; ?> </h4>
@@ -97,8 +87,10 @@
                             </div>
                             </p>
                             </li>
+                            </a>
                         </div>
-                        <?
+                         
+                        <?php
                     }
                     ?>
                         
@@ -115,22 +107,40 @@
        <div class="glideCategory">
        <div class="glide">
                 <div class="glide__track" data-glide-el="track">
-                
+                    
                     <ul class="glide__slides">
                     
-                        
+                    
                    
-                    <?
-                    $categoryR = $conn->query("SELECT * FROM recomendedCategories");
+                    <?php
+                    $categoryR = $conn->query("SELECT * FROM recomendedcategories JOIN categories ON categories.id = recomendedcategories.categoryID");
                     $categories = array();
                     while ($row = $categoryR->fetch()) {
-                        array_push($categories,$row['categoryName']);
+                        array_push($categories,$row['name']);
                     }
-                    for ($i = 0; $i++; $i<$categories.count){
-                        echo $categories[i];
+                    for ($i = 0; $i < count($categories)/2; $i++) {
+                        ?>
+                        <div class = "categorySlide"> 
+                        <li class="glide__slide">
+                            <div class = "categoryBlock">
+                                <h4>
+                        <?= $categories[$i];?>
+                    </h4>
+                    </div>
+                        <br>
+                        <div class = "categoryBlock">
+                            <h4>
+                        <?= $categories[$i+4];?>
+                        </h4>
+                    </div>
+                        </li>
+                        </div>
+                        <?php
+                        
                     }
+                  
                     ?>
-                    
+                   
                         
                     </ul>
                   
@@ -139,9 +149,9 @@
        </div>
     </section>
 
-    <section id="footer">
-        © 2021 Coursema Inc. All rights reserved.
-    </section>
+    <?php
+        include 'footer.php';
+    ?>
     
     <script src="glide-3.4.1/dist/glide.min.js"></script>
     <script src="script.js"></script>
