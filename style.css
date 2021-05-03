@@ -71,6 +71,15 @@
     color: white;
 }
 
+#register:hover {
+    background-color: #CC8D29;
+}
+
+#login:hover {
+    color: #CC8D29;
+    border-color: #CC8D29;
+}
+
 #searchIcon {
     display: flex;
     justify-content: center;
@@ -177,11 +186,23 @@
 
 .price {
     padding-top: 5px;
+    font-weight: 600;
 }
 
 .coursePreview img {
     width: 100%;
     border-radius: 5px;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.coursePreview img:hover {
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 #slider {
@@ -209,6 +230,10 @@
     border-width: 1px;
     border-color: gray;
     border-radius: 10px;
+}
+
+.categoryBlock:hover {
+    background-color: #F5F5F5;
 }
 
 #footer {

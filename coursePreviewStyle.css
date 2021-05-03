@@ -1,0 +1,41 @@
+#previewPanel {
+    background-color: #1e1e1c;
+    width: 100%;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#textContener {
+    width: 50%;
+    height: 100%;
+}
+
+#textContener h1 {
+    padding-top: 40px;
+    font-size: 36px;
+}
+
+#textContener p {
+    padding-top: 15px;
+}
+
+#coursePanel {
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+#courseImage {
+    flex: 1;
+}
+
+#buyButtons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#courseDesc {}

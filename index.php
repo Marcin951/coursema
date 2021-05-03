@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/93861cd10c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="glide-3.4.1/dist/css/glide.core.min.css">
+    <link rel="icon" href="img/fav.png" type="image/x-icon"/>
 </head>
 
 <body>
@@ -65,7 +66,7 @@
                         ?>
                        
                         <div class = "coursePreview">
-                        <a href = "coursePreview.php">
+                        <a href = "coursePreview.php?courseID=<?=$id?>">
                            <li class="glide__slide">
                             <img src=<?=$row['thumbnailURL'];?>>
                             <h4><?= $row['title']; ?> </h4>
